@@ -1,0 +1,14 @@
+<!-- petugas_list.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>Daftar Petugas</h2>
+  <a href="{% url 'petugas_create' %}">Tambah Petugas</a>
+  <ul>
+    {% for petugas in petugas %}
+      <li>{{ petugas.nama_petugas }} ({{ petugas.level }}) - 
+        <a href="{% url 'petugas_update' petugas.pk %}">Edit</a> | 
+        <a href="{% url 'petugas_delete' petugas.pk %}">Hapus</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

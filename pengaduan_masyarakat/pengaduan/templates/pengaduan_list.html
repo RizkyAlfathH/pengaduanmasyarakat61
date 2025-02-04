@@ -1,0 +1,14 @@
+<!-- pengaduan_list.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>Daftar Pengaduan</h2>
+  <a href="{% url 'pengaduan_create' %}">Tambah Pengaduan</a>
+  <ul>
+    {% for pengaduan in pengaduan %}
+      <li>Laporan #{{ pengaduan.id }} - {{ pengaduan.isi_laporan }} - 
+        <a href="{% url 'pengaduan_update' pengaduan.pk %}">Edit</a> | 
+        <a href="{% url 'pengaduan_delete' pengaduan.pk %}">Hapus</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

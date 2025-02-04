@@ -1,0 +1,13 @@
+<!-- tanggapan_list.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>Daftar Tanggapan</h2>
+  <a href="{% url 'tanggapan_create' %}">Tambah Tanggapan</a>
+  <ul>
+    {% for tanggapan in tanggapan %}
+      <li>Tanggapan untuk Laporan #{{ tanggapan.id_pengaduan.id }} - {{ tanggapan.tanggapan }} - 
+        <a href="{% url 'tanggapan_create' tanggapan.pk %}">Edit</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

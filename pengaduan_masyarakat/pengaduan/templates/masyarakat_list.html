@@ -1,0 +1,11 @@
+<!-- masyarakat_list.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>Daftar Masyarakat</h2>
+  <a href="{% url 'masyarakat_create' %}">Tambah Masyarakat</a>
+  <ul>
+    {% for masyarakat in masyarakat %}
+      <li>{{ masyarakat.nama }} - <a href="{% url 'masyarakat_update' masyarakat.pk %}">Edit</a> | <a href="{% url 'masyarakat_delete' masyarakat.pk %}">Hapus</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}

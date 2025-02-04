@@ -1,0 +1,11 @@
+<!-- pengaduan_form.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>{% if form.instance.pk %}Edit{% else %}Tambah{% endif %} Pengaduan</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Simpan</button>
+  </form>
+  <a href="{% url 'pengaduan_list' %}">Kembali ke Daftar Pengaduan</a>
+{% endblock %}

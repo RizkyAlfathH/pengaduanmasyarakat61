@@ -1,0 +1,11 @@
+<!-- tanggapan_form.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>{% if form.instance.pk %}Edit{% else %}Tambah{% endif %} Tanggapan</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Simpan</button>
+  </form>
+  <a href="{% url 'tanggapan_list' %}">Kembali ke Daftar Tanggapan</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+<!-- petugas_confirm_delete.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>Konfirmasi Hapus Petugas</h2>
+  <p>Apakah kamu yakin ingin menghapus petugas {{ petugas.nama_petugas }}?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Hapus</button>
+    <a href="{% url 'petugas_list' %}">Batal</a>
+  </form>
+{% endblock %}

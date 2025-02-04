@@ -1,0 +1,23 @@
+<!-- base_generic.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CRUD - Pengaduan{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>CRUD Pengaduan</h1>
+        <nav>
+            <a href="{% url 'masyarakat_list' %}">Masyarakat</a> |
+            <a href="{% url 'petugas_list' %}">Petugas</a> |
+            <a href="{% url 'pengaduan_list' %}">Pengaduan</a> |
+            <a href="{% url 'tanggapan_list' %}">Tanggapan</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

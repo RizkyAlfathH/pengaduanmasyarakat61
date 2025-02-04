@@ -1,0 +1,11 @@
+<!-- masyarakat_confirm_delete.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>Konfirmasi Hapus Masyarakat</h2>
+  <p>Apakah kamu yakin ingin menghapus {{ masyarakat.nama }}?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Hapus</button>
+    <a href="{% url 'masyarakat_list' %}">Batal</a>
+  </form>
+{% endblock %}

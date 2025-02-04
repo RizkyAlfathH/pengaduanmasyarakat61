@@ -1,0 +1,11 @@
+<!-- pengaduan_confirm_delete.html -->
+{% extends 'base_generic.html' %}
+{% block content %}
+  <h2>Konfirmasi Hapus Pengaduan</h2>
+  <p>Apakah kamu yakin ingin menghapus pengaduan ini?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Hapus</button>
+    <a href="{% url 'pengaduan_list' %}">Batal</a>
+  </form>
+{% endblock %}
